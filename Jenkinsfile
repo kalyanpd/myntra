@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_REPO = "kalyan3599/myntra"   // change to your DockerHub repo
         IMAGE_TAG = "v1"
+	DOCKER_USER = 'kalyan3599'
     }
 
     stages {
@@ -25,7 +26,7 @@ pipeline {
 
         stage('Push to DockerHub') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'anithavalluri-docker',
+                withCredentials([usernamePassword(credentialsId: '1234',
                                                   usernameVariable: 'DOCKER_USER',
                                                   passwordVariable: 'DOCKER_PASS')]) {
                     sh '''
